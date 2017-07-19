@@ -45,17 +45,45 @@
   \begin{columns}[t]
     \begin{column}{\onecolwid}
 
-      \begin{block}{Technologies}
-        {\bf OpenNMT is an ecosystem based on multiple technologies and frameworks:}
-        \vskip1ex
-        \begin{itemize}
-        \item \alert{OpenNMT}: the original full-featured project in \emph{LuaTorch}, focusing on maintainability, user support, and production.
-        \item \alert{OpenNMT-py}: a \emph{PyTorch} clone of OpenNMT, focusing on research and modularity.
-        \item \alert{CTranslate}: an inference engine for OpenNMT models in C++ and \emph{Eigen}, focusing on embedded and production environments.
-        \end{itemize}
+      \begin{block}{Competitive system}
+        OpenNMT implements models and training procedures that achieve competitive results in system comparison, e.g. in the recent WMT 2017 translation task:
+
+        \vskip2ex
+
+        \begin{table}
+          \begin{tabular}{l r}
+            {\bf System} & {\bf BLEU-cased} \\
+            \midrule
+            uedin-nmt-ensemble & 28.3 \\
+            LMU-nmt-reranked-wmt17-en-de & 27.1 \\
+            {\bf SYSTRAN-single} & {\bf 26.7} \\
+            \bottomrule
+          \end{tabular}
+          \vskip1ex
+          \caption{Top 3 on English-German \emph{newstest2017}.}
+        \end{table}
+
+        \vskip2ex
+
+        More generally, OpenNMT produces strong baselines with optimized training time and memory requirements.
+
+        \vskip2ex
+
+        \begin{table}
+          \begin{tabular}{l c c r}
+            {\bf System} & {\bf Training (WPS)} & {\bf Inference (WPS)} & {\bf BLEU} \\
+            \midrule
+            Nematus & 3221 & 252 & 18.25 \\
+            OpenNMT & 5254 & 457 & 19.34 \\
+            \bottomrule
+          \end{tabular}
+          \vskip1ex
+          \caption{Comparison of source words per second.}
+        \end{table}
+
       \end{block}
 
-      \vskip3ex
+      \vskip2ex
 
       \begin{block}{Features}
         {\bf OpenNMT implements many additional features on top of the standard sequence-to-sequence model:}
@@ -74,7 +102,7 @@
 
       \end{block}
 
-      \vskip3ex
+      \vskip2ex
 
       \begin{block}{Tasks}
         {\bf OpenNMT supports other tasks than machine translation:}
@@ -96,7 +124,7 @@
 
         \begin{figure}
           \begin{center}
-            \includegraphics[width=0.8\onecolwid]{im2text}
+            \includegraphics[width=0.7\onecolwid]{im2text}
           \end{center}
         \end{figure}
 
@@ -154,27 +182,14 @@
         \end{column}
 
         \begin{column}{\threecolwid}
-          \begin{block}{State-of-the-art system}
-            OpenNMT implements models and training procedures that achieve competitive results in system comparison, e.g. in the recent WMT 2017 translation task:
-
-            \vskip2ex
-
-            \begin{table}
-              \begin{tabular}{l r}
-                {\bf System} & {\bf BLEU-cased} \\
-                \midrule
-                uedin-nmt-ensemble & 28.3 \\
-                LMU-nmt-reranked-wmt17-en-de & 27.1 \\
-                {\bf SYSTRAN-single} & {\bf 26.7} \\
-                \bottomrule
-              \end{tabular}
-              \vskip1ex
-              \caption{Top 3 on English-German \emph{newstest2017}.}
-            \end{table}
-
-            \vskip2ex
-
-            More generally, OpenNMT produces strong baselines with optimized training time and memory requirements.
+          \begin{block}{Technologies}
+            {\bf OpenNMT is an ecosystem based on multiple technologies and frameworks:}
+            \vskip1ex
+            \begin{itemize}
+            \item \alert{OpenNMT}: the original full-featured project in \emph{LuaTorch}, focusing on maintainability, user support, and production.
+            \item \alert{OpenNMT-py}: a \emph{PyTorch} clone of OpenNMT, focusing on research and modularity.
+            \item \alert{CTranslate}: an inference engine for OpenNMT models in C++ and \emph{Eigen}, focusing on embedded and production environments.
+            \end{itemize}
           \end{block}
         \end{column}
       \end{columns}
@@ -201,7 +216,7 @@
 
       \end{block}
 
-      \vskip3ex
+      \vskip2ex
 
       \begin{block}{Production environment}
         \begin{figure}
@@ -214,7 +229,7 @@
         OpenNMT has proved to be adapted to production settings. SYSTRAN---a major translation services provider---is using OpenNMT for its Pure Neural\texttrademark~Machine Translation offering which enables higher translation quality in existing services.
       \end{block}
 
-      \vskip3ex
+      \vskip2ex
 
       \begin{block}{Community}
         OpenNMT is also a community around machine translation and language modeling. The forum (\alert{forum.opennmt.net}) counts more than 200 users with daily questions on how to improve or adapt their system and training procedure.
@@ -230,6 +245,8 @@
 
         A user survey showed that users are equally coming from industry and academia, proving that the framework is well suited for many use cases.
       \end{block}
+
+      \vskip2ex
 
       \begin{block}{Open-source landscape}
         There exists several open-source alternatives that maintain a healthy competition and collaboration. Notable mentions are:
